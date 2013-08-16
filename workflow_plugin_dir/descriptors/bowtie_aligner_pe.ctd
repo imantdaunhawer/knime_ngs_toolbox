@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="BowtieAlignerPE" version="1.0" docurl="http://bowtie-bio.sourceforge.net/index.shtml" category="Read Mapping">
+    <executableName>bowtie</executableName>
+    <description><![CDATA[Bowtie Paired-End Alignment.]]></description>
+    <manual><![CDATA[bowtie]]></manual>
+    <docurl>Direct links in docs</docurl>
+    <cli>
+        <!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+        <clielement optionIdentifier="" isList="false">
+            <mapping referenceName="bowtie_aligner_pe.argument-0" />
+        </clielement>
+
+		<clielement optionIdentifier="-S" isList="false">
+		    <mapping referenceName="bowtie_aligner_pe.sam_out" />
+		</clielement>
+
+		<clielement optionIdentifier="-1" isList="false">
+		    <mapping referenceName="bowtie_aligner_pe.left_reads" />
+		</clielement>
+
+		<clielement optionIdentifier="-2" isList="false">
+		    <mapping referenceName="bowtie_aligner_pe.right_reads" />
+		</clielement>
+		
+		<clielement optionIdentifier="--minins" isList="false">
+		    <mapping referenceName="bowtie_aligner_pe.minins" />
+		</clielement>
+
+		<clielement optionIdentifier="--maxins" isList="false">
+		    <mapping referenceName="bowtie_aligner_pe.maxins" />
+		</clielement>
+    </cli>
+    <PARAMETERS version="1.4"
+                xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_4.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <NODE name="bowtie_aligner_pe" description="SAMtools BAM to SAM conversion">
+            <ITEM name="argument-0" value="" type="input-prefix" required="true"
+                  description="Input Bowtie index." supported_formats="*.ebwt" />
+            <ITEM name="left_reads" value="" type="input-file" required="true"
+                  description="Left reads files." supported_formats="*.fasta,*.fa,*.fastq,*.fq" />
+            <ITEM name="right_reads" value="" type="input-file" required="true"
+                  description="Right reads file." supported_formats="*.fasta,*.fa,*.fastq,*.fq" />
+            <ITEM name="sam_out" value="" type="output-file" required="true"
+                  description="Output SAM file." supported_formats="*.sam" />
+
+            <ITEM name="minins" value="0" type="int" required="false"
+                  description="minimum insert size for paired-end alignment" restrictions="0:" />
+            <ITEM name="maxins" value="250" type="int" required="false"
+                  description="maximum insert size for paired-end alignment" restrictions="1:" />
+        </NODE>
+    </PARAMETERS>
+</tool>

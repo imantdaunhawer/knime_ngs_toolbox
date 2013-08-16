@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="Bowtie2AlignerSE" version="1.0" docurl="http://bowtie-bio.sourceforge.net/index.shtml" category="Read Mapping">
+    <executableName>bowtie2-align</executableName>
+    <description><![CDATA[Bowtie2 Single-End Alignment.]]></description>
+    <manual><![CDATA[bowtie2]]></manual>
+    <docurl>Direct links in docs</docurl>
+    <cli>
+        <clielement optionIdentifier="" isList="false">
+            <mapping referenceName="bowtie2_aligner_se.mode" />
+        </clielement>
+        
+        <clielement optionIdentifier="-x" isList="false">
+            <mapping referenceName="bowtie2_aligner_se.index_prefix" />
+        </clielement>
+
+		<clielement optionIdentifier="-U" isList="false">
+		    <mapping referenceName="bowtie2_aligner_se.reads" />
+		</clielement>
+
+		<clielement optionIdentifier="-S" isList="false">
+		    <mapping referenceName="bowtie2_aligner_se.sam_out" />
+		</clielement>
+    </cli>
+    <PARAMETERS version="1.4"
+                xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_4.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <NODE name="bowtie2_aligner_se" description="SAMtools BAM to SAM conversion">
+            <ITEM name="index_prefix" value="" type="input-prefix" required="true"
+                  description="Input Bowtie index." supported_formats="*.bt2" />
+            <ITEM name="reads" value="" type="input-file" required="true"
+                  description="Reads files." supported_formats="*.fasta,*.fa,*.fastq,*.fq" />
+            <ITEM name="sam_out" value="" type="output-file" required="true"
+                  description="Output SAM file." supported_formats="*.sam" />
+
+            <ITEM name="mode" value="--end-to-end" type="string" required="true" description="Alignment mode." restrictions="--end-to-end,--local" />
+        </NODE>
+    </PARAMETERS>
+</tool>
