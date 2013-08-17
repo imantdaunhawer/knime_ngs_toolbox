@@ -4,3 +4,6 @@ application/x-sam sam
 application/x-bam bam
 application/x-bowtie-index ebwt
 application/x-bowtie2-index bt2
+application/x-bcf bcf
+application/x-vcf vcf
+application/x-bwa-index bwaidx

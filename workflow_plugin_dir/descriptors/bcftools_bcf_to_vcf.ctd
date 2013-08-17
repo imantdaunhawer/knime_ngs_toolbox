@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="BcfToVcf" version="0.1.17" docurl="http://samtools.sourceforge.net/samtools.shtml" category="VCF and BCF">
+	<executableName>bcftools-wrapper.sh</executableName>
+	<description><![CDATA[bcftools BCF to VCF conversion.]]></description>
+	<manual><![CDATA[bcftools view]]></manual>
+	<docurl>Direct links in docs</docurl>
+	<cli>
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="bcf_to_vcf.argument-0" />
+		</clielement>
+
+		<clielement optionIdentifier="view" isList="false" />
+
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="bcf_to_vcf.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS  version="1.4" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_4.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="bcf_to_vcf" description="SAMtools BAM to SAM conversion">
+            <ITEM name="argument-0" value="" type="output-file" required="true" description="Output VCF file." supported_formats="*.vcf" />
+            <ITEM name="argument-1" value="" type="input-file" required="true" description="Input BCF file." supported_formats="*.bcf" />
+        </NODE>
+    </PARAMETERS>
+</tool>

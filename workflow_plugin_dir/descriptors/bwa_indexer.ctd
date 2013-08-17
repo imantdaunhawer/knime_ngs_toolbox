@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="BwaIndexer" version="1.0" docurl="http://bio-bwa.sourceforge.net/bwa.shtml" category="Read Mapping">
+    <executableName>bwa-index-wrapper.sh</executableName>
+    <description><![CDATA[BWA Indexer.]]></description>
+    <manual><![CDATA[bwa index]]></manual>
+    <docurl>Direct links in docs</docurl>
+    <cli>
+        <!-- Following clielements are arguments. You should consider providing a help text to ease understanding. -->
+        <clielement optionIdentifier="" isList="false">
+            <mapping referenceName="bwa_index.argument-0" />
+        </clielement>
+        <clielement optionIdentifier="" isList="false">
+            <mapping referenceName="bwa_index.argument-1" />
+        </clielement>
+    </cli>
+    <PARAMETERS version="1.4"
+                xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_4.xsd"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <NODE name="bwa_index" description="SAMtools BAM to SAM conversion">
+            <ITEM name="argument-0" value="" type="input-file" required="true"
+                  description="Input FASTA file." supported_formats="*.fasta,*.fa" />
+            <ITEM name="argument-1" value="" type="output-prefix" required="true"
+                  description="Output BWA index." supported_formats="*.bwaidx" />
+        </NODE>
+    </PARAMETERS>
+</tool>

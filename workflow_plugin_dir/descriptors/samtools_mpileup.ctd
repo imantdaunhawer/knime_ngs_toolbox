@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tool name="SamtoolsMPileup" version="0.1.17" docurl="http://samtools.sourceforge.net/samtools.shtml" category="SNP Calling">
+	<executableName>samtools-mpileup.sh</executableName>
+	<description><![CDATA[SAMtools MPileup.]]></description>
+	<manual><![CDATA[samtools mpileup | bcftools -bvcg]]></manual>
+	<docurl>Direct links in docs</docurl>
+	<cli>
+	    <!-- The output path is the first argument and shifted by samtools-mpileup -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="samtools_mpileup.argument-0" />
+		</clielement>
+		
+		<!-- Input reference file -->
+		<clielement optionIdentifier="-f" isList="false">
+			<mapping referenceName="samtools_mpileup.reference_file" />
+		</clielement>
+
+		<clielement optionIdentifier="" isList="true">
+			<mapping referenceName="samtools_mpileup.per_sample_depth" />
+		</clielement>
+
+		<!-- Input BAM file(s) -->
+		<clielement optionIdentifier="" isList="false">
+			<mapping referenceName="samtools_mpileup.argument-1" />
+		</clielement>
+	</cli>
+	<PARAMETERS  version="1.4" xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_4.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<NODE name="samtools_mpileup" description="SAMtools BAM to SAM conversion">
+            <ITEM name="argument-0" value="" type="output-file" required="true" description="Output BCF file." supported_formats="*.bcf" />
+            <ITEM name="argument-1" value="" type="input-file" required="true" description="Input BAM file." supported_formats="*.bam" />
+            <ITEM name="reference_file" value="" type="input-file" required="false" description="Input Reference file." supported_formats="*.fasta,*.fa" />
+            <ITEM name="per_sample_depth" value="-D" type="string" required="false" restrictions=",-D" description="Per sample read depth." />
+        </NODE>
+    </PARAMETERS>
+</tool>

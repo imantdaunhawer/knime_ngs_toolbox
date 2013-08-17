@@ -6,7 +6,7 @@
     <docurl>Direct links in docs</docurl>
     <cli>
         <clielement optionIdentifier="" isList="false">
-            <mapping referenceName="bowtie2_aligner_se.mode" />
+            <mapping referenceName="bowtie2_aligner_pe.mode" />
         </clielement>
 
 		<clielement optionIdentifier="--minins" isList="false">
@@ -16,8 +16,6 @@
 		<clielement optionIdentifier="--maxins" isList="false">
 		    <mapping referenceName="bowtie2_aligner_pe.maxins" />
 		</clielement>
-
-        <clieelement optionIdentifier="--end-to-end" isList="false" />
 
         <clielement optionIdentifier="-x" isList="false">
             <mapping referenceName="bowtie2_aligner_pe.index_prefix" />
@@ -33,6 +31,10 @@
 		
 		<clielement optionIdentifier="-S" isList="false">
 		    <mapping referenceName="bowtie2_aligner_pe.sam_out" />
+		</clielement>
+
+		<clielement optionIdentifier="--threads" isList="false">
+		    <mapping referenceName="bowtie2_aligner_pe.threads" />
 		</clielement>
     </cli>
     <PARAMETERS version="1.4"
@@ -54,6 +56,7 @@
                   description="maximum insert size for paired-end alignment" restrictions="1:" />
 
             <ITEM name="mode" value="--end-to-end" type="string" required="true" description="Alignment mode." restrictions="--end-to-end,--local" />
+            <ITEM name="threads" value="1" type="int" required="true" description="Number of threads to use." restrictions="1:" />
         </NODE>
     </PARAMETERS>
 </tool>

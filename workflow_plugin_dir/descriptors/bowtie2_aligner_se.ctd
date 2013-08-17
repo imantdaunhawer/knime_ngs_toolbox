@@ -20,6 +20,10 @@
 		<clielement optionIdentifier="-S" isList="false">
 		    <mapping referenceName="bowtie2_aligner_se.sam_out" />
 		</clielement>
+
+		<clielement optionIdentifier="--threads" isList="false">
+		    <mapping referenceName="bowtie2_aligner_se.threads" />
+		</clielement>
     </cli>
     <PARAMETERS version="1.4"
                 xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_4.xsd"
@@ -33,6 +37,7 @@
                   description="Output SAM file." supported_formats="*.sam" />
 
             <ITEM name="mode" value="--end-to-end" type="string" required="true" description="Alignment mode." restrictions="--end-to-end,--local" />
+            <ITEM name="threads" value="1" type="int" required="true" description="Number of threads to use." restrictions="1:" />
         </NODE>
     </PARAMETERS>
 </tool>
