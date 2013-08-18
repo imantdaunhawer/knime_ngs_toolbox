@@ -15,6 +15,10 @@
         <clielement optionIdentifier="" isList="false">
             <mapping referenceName="bam_to_sam.argument-1" />
         </clielement>
+        
+        <clielement optionIdentifier="" isList="false">
+        	<mapping referenceName="bam_to_sam.argument-2" />
+        </clielement>
     </cli>
     <PARAMETERS version="1.4"
                 xsi:noNamespaceSchemaLocation="http://open-ms.sourceforge.net/schemas/Param_1_4.xsd"
@@ -24,6 +28,8 @@
                   description="Input BAM file." supported_formats="*.bam" />
             <ITEM name="argument-1" value="" type="output-file" required="true"
                   description="Output BAM file." supported_formats="*.bam" />
+            <ITEM name="argument-2" value="" type="string" required="true"
+                  description="Sort by query name (-n) instead of position (default)" restrictions=",-n" />
         </NODE>
     </PARAMETERS>
 </tool>
