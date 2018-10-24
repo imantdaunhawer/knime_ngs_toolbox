@@ -9,7 +9,7 @@
 
 # Include helper functions
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-. ${DIR}/wrapper_utils.sh
+. "${DIR}"/wrapper_utils.sh
 
 # ---------------------------------------------------------------------------
 # Cleanup at Exit
